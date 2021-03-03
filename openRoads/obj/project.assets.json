@@ -5683,11 +5683,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads\\openRoadsWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads\\openRoadsWebAPI.csproj",
       "projectName": "openRoadsWebAPI",
-      "projectPath": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads\\openRoadsWebAPI.csproj",
+      "projectPath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads\\openRoadsWebAPI.csproj",
       "packagesPath": "C:\\Users\\Mehmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads\\obj\\",
+      "outputPath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -5707,8 +5707,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads.Model\\openRoads.Model.csproj": {
-              "projectPath": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads.Model\\openRoads.Model.csproj"
+            "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Model\\openRoads.Model.csproj": {
+              "projectPath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Model\\openRoads.Model.csproj"
             }
           }
         }
