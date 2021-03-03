@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RKgaDGnoCrMbrL6zK57VuWKlS3or/C08P4F4pmWzYf5/HuMQXyduK6qY6sbfacRimJi5191vdp0Uc9gcv7F5WA==",
+  "dgSpecHash": "oW2e4lyMzLAOxVM1ImzQzJMkFtXy5qO59CmXFE+CgL9jkwdD2R5mwslXauHZ8BJ0IGsjAMHy7B9b7PpfiEqLkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads.Model\\openRoads.Model.csproj",
+  "projectFilePath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Model\\openRoads.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehmed\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

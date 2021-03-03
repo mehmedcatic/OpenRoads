@@ -326,11 +326,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads.Model\\openRoads.Model.csproj",
+      "projectUniqueName": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Model\\openRoads.Model.csproj",
       "projectName": "openRoads.Model",
-      "projectPath": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads.Model\\openRoads.Model.csproj",
+      "projectPath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Model\\openRoads.Model.csproj",
       "packagesPath": "C:\\Users\\Mehmed\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mehmed\\source\\repos\\openRoads\\openRoads.Model\\obj\\",
+      "outputPath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
