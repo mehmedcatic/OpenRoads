@@ -1,0 +1,218 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using AutoMapper;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using openRoads.Model;
+using openRoads.Model.Requests;
+using openRoadsWebAPI.Filters;
+using openRoadsWebAPI.Models;
+using openRoadsWebAPI.Security;
+using openRoadsWebAPI.Service;
+using VehicleModel = openRoads.Model.VehicleModel;
+
+namespace openRoads
+{
+    public class Startup
+    {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        // This method gets called by the runtime. Use this method to add services to the container.
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddControllers();
+
+
+            //DB CONTEXT
+            services.AddDbContext<MyDbContext>(x => x.UseSqlServer(Configuration.GetConnectionString("cs1")));
+
+
+
+            //AutoMapper
+            services.AddAutoMapper(typeof(Startup));
+
+            //Enabled custom created filter
+            services.AddMvc(x => x.Filters.Add<ErrorFilter>());
+
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            //services.AddSwaggerGen();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Open Roads API", Version = "v1" });
+
+                //c.AddSecurityDefinition("basicAuth", new OpenApiSecurityScheme
+                //{
+                //    Type = SecuritySchemeType.Http,
+                //    Scheme = "basic"
+                //});
+
+                //c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                //{
+                //    {
+                //        new OpenApiSecurityScheme
+                //        {
+                //            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "basicAuth" }
+                //        },
+                //        new string[]{}
+                //    }
+                //});
+
+                c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "basic",
+                    In = ParameterLocation.Header,
+                    Description = "Basic Authorization header using the Bearer scheme."
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "basic"
+                            }
+                        },
+                        new string[] {}
+                    }
+                });
+
+        });
+
+            services.AddAuthentication("BasicAuthentication")
+                .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
+
+
+            //Mapping of the service classes and interfaces
+
+            //Services that implement IBaseCRUD interface
+            services
+                .AddScoped<IBaseCRUDService<BranchModel, BranchSearchRequest, BranchInsertUpdateRequest,
+                    BranchInsertUpdateRequest>, BranchService>();
+            services
+                .AddScoped<IEmployeeService, EmployeeService>();
+
+            services
+                .AddScoped<IBaseCRUDService<VehicleModel, VehicleSearchRequest, VehicleInsertUpdateRequest,
+                    VehicleInsertUpdateRequest>, VehicleService>();
+            services
+                .AddScoped<IBaseCRUDService<CountryModel, object, CountryInsertRequest, CountryInsertRequest>,
+                    BaseCRUDService<CountryModel, object, Country, CountryInsertRequest, CountryInsertRequest>>();
+            services
+                .AddScoped<
+                    IBaseCRUDService<InsuranceModel, object, InsuranceInsertUpdateRequest, InsuranceInsertUpdateRequest>
+                    , BaseCRUDService<InsuranceModel, object, Insurance, InsuranceInsertUpdateRequest,
+                        InsuranceInsertUpdateRequest>>();
+            services
+                .AddScoped<IBaseCRUDService<ClientModel, ClientSearchRequest, ClientUpdateRequest, ClientUpdateRequest>,
+                    ClientService>();
+            services
+                .AddScoped<IBaseCRUDService<EmployeeRolesModel, object, EmployeeRolesInsertUpdateRequest,
+                        EmployeeRolesInsertUpdateRequest>,
+                    BaseCRUDService<EmployeeRolesModel, object, EmployeeRoles, EmployeeRolesInsertUpdateRequest,
+                        EmployeeRolesInsertUpdateRequest>>();
+            services
+                .AddScoped<
+                    IBaseCRUDService<VehicleCategoryModel, object, VehicleReferenceTableAddUpdateRequest,
+                        VehicleReferenceTableAddUpdateRequest>, BaseCRUDService<VehicleCategoryModel, object,
+                        VehicleCategory, VehicleReferenceTableAddUpdateRequest, VehicleReferenceTableAddUpdateRequest>>();
+            services
+                .AddScoped<
+                    IBaseCRUDService<VehicleFuelTypeModel, object, VehicleReferenceTableAddUpdateRequest,
+                        VehicleReferenceTableAddUpdateRequest>, BaseCRUDService<VehicleFuelTypeModel, object,
+                        VehicleFuelType, VehicleReferenceTableAddUpdateRequest, VehicleReferenceTableAddUpdateRequest>>();
+            services
+                .AddScoped<IBaseCRUDService<VehicleManufacturerModel, object, VehicleReferenceTableAddUpdateRequest,
+                        VehicleReferenceTableAddUpdateRequest>,
+                    BaseCRUDService<VehicleManufacturerModel, object, VehicleManufacturer,
+                        VehicleReferenceTableAddUpdateRequest, VehicleReferenceTableAddUpdateRequest>>();
+            services
+                .AddScoped<IBaseCRUDService<VehicleTransmissionTypeModel, object, VehicleReferenceTableAddUpdateRequest,
+                        VehicleReferenceTableAddUpdateRequest>,
+                    BaseCRUDService<VehicleTransmissionTypeModel, object, VehicleTransmissionType,
+                        VehicleReferenceTableAddUpdateRequest, VehicleReferenceTableAddUpdateRequest>>();
+            services
+                .AddScoped<
+                    IBaseCRUDService<VehicleTypeModel, object, VehicleReferenceTableAddUpdateRequest,
+                        VehicleReferenceTableAddUpdateRequest>, BaseCRUDService<VehicleTypeModel, object, VehicleType,
+                        VehicleReferenceTableAddUpdateRequest, VehicleReferenceTableAddUpdateRequest>>();
+            services
+                .AddScoped<IBaseCRUDService<VehicleModelModel, VehicleModelSearchRequest, VehicleModelAddUpdateRequest,
+                    VehicleModelAddUpdateRequest>, VehicleModelService>();
+
+
+            //Services that implement IBase interface
+
+            services.AddScoped<IBaseService<RatingModel, RatingSearchRequest>, RatingService>();
+            services.AddScoped<IBaseService<ReservationModel, ReservationSearchRequest>, ReservationService>();
+
+            services.AddScoped<IBaseService<PersonModel, object>, BaseService<PersonModel, object, Person>>();
+            services.AddScoped<IBaseService<LoginDataModel, object>, BaseService<LoginDataModel, object, LoginData>>();
+            services
+                .AddScoped<IBaseService<EmployeeEmployeeRolesModel, object>, EmployeeEmployeeRolesService>();
+
+
+
+
+        }
+
+        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            //app.UseHttpsRedirection();
+
+            app.UseRouting();
+
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
+
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+
+
+
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+        }
+    }
+}
