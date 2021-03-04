@@ -30,9 +30,7 @@ namespace openRoadsWebAPI.Service
             var loginDataUser = _context.LoginData.FirstOrDefault(x => x.Username == username);
             var person = _context.Person.FirstOrDefault(x => x.LoginDataId == loginDataUser.LoginDataId);
             var employee = _context.Employee.FirstOrDefault(x => x.PersonId == person.PersonId);
-            //var employeeRoles = _context.EmployeeRoles.ToList();
-            //var employeeEmployeeRoles = _context.EmployeeEmployeeRoles.ToList();
-
+         
             if (employee != null)
             {
                 var newHash = HelperClass.GenerateHash(loginDataUser.PasswordSalt, password);
@@ -107,6 +105,14 @@ namespace openRoadsWebAPI.Service
 
         public EmployeeModel Insert(EmployeeInsertUpdateRequest request)
         {
+            var LoginDataCheck = _context.LoginData.FirstOrDefault(x => x.Username == request.Username);
+            if (LoginDataCheck != null)
+                throw new UserException("Username already exists, try another one!");
+            
+            var personCheck = _context.Person.FirstOrDefault(x => x.Email == request.Email);
+            if(personCheck != null)
+                throw new UserException("Email already exists, try another one!");
+
             request.PasswordSalt = HelperClass.GenerateSalt();
             request.PasswordHash = HelperClass.GenerateHash(request.PasswordSalt, request.CleasPassword);
 
