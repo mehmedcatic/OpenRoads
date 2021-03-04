@@ -1,0 +1,1 @@
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\openRoads.Mobile.UWP.csproj;x86

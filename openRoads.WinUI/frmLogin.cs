@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using openRoads.Model;
+using openRoads.Model.Requests;
 
 namespace openRoads.WinUI
 {
@@ -31,9 +32,19 @@ namespace openRoads.WinUI
 
                 try
                 {
-                    await _service.Get<List<EmployeeModel>>(null);
-                    frmIndex frm = new frmIndex();
-                    frm.Show();
+                    EmployeeSearchRequest request = new EmployeeSearchRequest
+                    {
+                        Username = APIService.Username
+                    };
+
+                    var obj = await _service.Get<List<EmployeeModel>>(request);
+                    if(obj == null)
+                        MessageBox.Show("Invalid username or password!", "Authentication", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        frmIndex frm = new frmIndex();
+                        frm.Show();
+                    }
                 }
                 catch (Exception exception)
                 {

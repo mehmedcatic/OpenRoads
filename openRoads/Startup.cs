@@ -58,23 +58,6 @@ namespace openRoads
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Open Roads API", Version = "v1" });
 
-                //c.AddSecurityDefinition("basicAuth", new OpenApiSecurityScheme
-                //{
-                //    Type = SecuritySchemeType.Http,
-                //    Scheme = "basic"
-                //});
-
-                //c.AddSecurityRequirement(new OpenApiSecurityRequirement
-                //{
-                //    {
-                //        new OpenApiSecurityScheme
-                //        {
-                //            Reference = new OpenApiReference { Type = ReferenceType.SecurityScheme, Id = "basicAuth" }
-                //        },
-                //        new string[]{}
-                //    }
-                //});
-
                 c.AddSecurityDefinition("basic", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",

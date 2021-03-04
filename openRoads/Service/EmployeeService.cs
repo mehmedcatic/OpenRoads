@@ -92,6 +92,41 @@ namespace openRoadsWebAPI.Service
                 return _mapper.Map<List<EmployeeModel>>(listEmpl);
             }
 
+            if (!string.IsNullOrEmpty(search.Username))
+            {
+                var persons = _context.Person.ToList();
+                var loginModel = _context.LoginData.FirstOrDefault(x => x.Username == search.Username);
+
+                List<EmployeeModel> employee = new List<EmployeeModel>();
+                foreach (var x in query)
+                {
+                    foreach (var person in persons)
+                    {
+                        if (x.PersonId == person.PersonId)
+                        {
+                            if (person.LoginDataId == loginModel.LoginDataId && loginModel.Username == search.Username)
+                                employee.Add(new EmployeeModel
+                                {
+                                    PersonId = x.PersonId,
+                                    Active = x.Active,
+                                    BranchId = x.BranchId,
+                                    EmployeeCode = x.EmployeeCode,
+                                    EmployeeId = x.EmployeeId,
+                                    HireDate = x.HireDate,
+                                    JobDescription = x.JobDescription
+                                });
+                            break;
+                        }
+                    }
+                }
+
+                if (employee.Count > 0)
+                    return _mapper.Map<System.Collections.Generic.List<EmployeeModel>>(employee);
+
+                return null;
+
+
+            }
             return _mapper.Map<List<EmployeeModel>>(query);
 
         }

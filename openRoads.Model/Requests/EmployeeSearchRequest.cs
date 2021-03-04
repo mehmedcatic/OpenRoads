@@ -8,5 +8,6 @@ namespace openRoads.Model.Requests
     {
         public int? BranchId { get; set; }
         public int? EmployeeRolesId { get; set; }
+        public string Username { get; set; }
     }
 }

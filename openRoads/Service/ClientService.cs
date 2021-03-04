@@ -20,6 +20,26 @@ namespace openRoadsWebAPI.Service
         {
         }
 
+
+        public override ClientModel AuthenticateClient(string username, string password)
+        {
+            var loginDataUser = _context.LoginData.FirstOrDefault(x => x.Username == username);
+            var person = _context.Person.FirstOrDefault(x => x.LoginDataId == loginDataUser.LoginDataId);
+            var client = _context.Client.FirstOrDefault(x => x.PersonId == person.PersonId);
+
+            if (client != null)
+            {
+                var newHash = HelperClass.GenerateHash(loginDataUser.PasswordSalt, password);
+
+                if (newHash == loginDataUser.PasswordHash)
+                {
+                    return _mapper.Map<ClientModel>(client);
+                }
+            }
+
+            return null;
+        }
+
         public override List<ClientModel> Get(ClientSearchRequest search)
         {
             var clientList = _context.Client.Include(x=>x.Person).ToList();
@@ -42,6 +62,39 @@ namespace openRoadsWebAPI.Service
                         });
                 }
                 return _mapper.Map<List<ClientModel>>(filteredClients);
+            }
+
+            
+            if (string.IsNullOrEmpty(search.Username) == false)
+            {
+                var persons = _context.Person.ToList();
+                var loginModel = _context.LoginData.FirstOrDefault(x => x.Username == search.Username);
+
+                List<ClientModel> client = new List<ClientModel>();
+                foreach (var x in clientList)
+                {
+                    foreach (var person in persons)
+                    {
+                        if (x.PersonId == person.PersonId)
+                        {
+                            if(person.LoginDataId == loginModel.LoginDataId && loginModel.Username == search.Username)
+                                client.Add(new ClientModel
+                                {
+                                    Active = x.Active,
+                                    PersonId = x.PersonId,
+                                    ClientId = x.ClientId,
+                                    RegistrationDate = x.RegistrationDate
+                                });
+
+                        }
+                    }
+                }
+
+                if (client.Count > 0)
+                    return _mapper.Map<List<ClientModel>>(client);
+
+                return null;
+
             }
 
             return _mapper.Map<List<ClientModel>>(clientList);

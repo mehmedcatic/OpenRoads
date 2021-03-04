@@ -7,5 +7,6 @@ namespace openRoads.Model.Requests
     public class ClientSearchRequest
     {
         public int? CountryId { get; set; }
+        public string Username { get; set; }
     }
 }

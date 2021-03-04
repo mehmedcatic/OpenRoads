@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using openRoads.Model;
+using openRoads.Model.Requests;
 using openRoadsWebAPI.Models;
 using openRoadsWebAPI.Service;
 
@@ -20,7 +21,10 @@ namespace openRoadsWebAPI.Security
 {
     public class BasicAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
-        private readonly IEmployeeService _userService;
+        private readonly IEmployeeService _adminService;
+
+        private readonly IBaseCRUDService<ClientModel, ClientSearchRequest, ClientUpdateRequest, ClientUpdateRequest>
+            _clientService;
 
         private readonly MyDbContext _context;
 
@@ -29,11 +33,13 @@ namespace openRoadsWebAPI.Security
             ILoggerFactory logger,
             UrlEncoder encoder,
             ISystemClock clock,
-            IEmployeeService userService,
+            IEmployeeService adminService,
+            IBaseCRUDService<ClientModel, ClientSearchRequest, ClientUpdateRequest, ClientUpdateRequest> clientService,
             MyDbContext context)
             : base(options, logger, encoder, clock)
         {
-            _userService = userService;
+            _adminService = adminService;
+            _clientService = clientService;
             _context = context;
         }
 
@@ -42,7 +48,8 @@ namespace openRoadsWebAPI.Security
             if (!Request.Headers.ContainsKey("Authorization"))
                 return AuthenticateResult.Fail("Missing Authorization Header");
 
-            EmployeeModel user = null;
+            EmployeeModel admin = null;
+            ClientModel client = null;
             LoginData loginDataPerson = null;
             Person person = null;
 
@@ -53,7 +60,8 @@ namespace openRoadsWebAPI.Security
                 var credentials = Encoding.UTF8.GetString(credentialBytes).Split(':');
                 var username = credentials[0];
                 var password = credentials[1];
-                user = _userService.AuthenticateEmployee(username, password);
+                admin = _adminService.AuthenticateEmployee(username, password);
+                client = _clientService.AuthenticateClient(username, password);
                 loginDataPerson = _context.LoginData.FirstOrDefault(x => x.Username == username);
                 person = _context.Person.FirstOrDefault(x => x.LoginDataId == loginDataPerson.LoginDataId);
             }
@@ -62,7 +70,7 @@ namespace openRoadsWebAPI.Security
                 return AuthenticateResult.Fail("Invalid Authorization Header");
             }
 
-            if (user == null)
+            if (admin == null && client == null)
                 return AuthenticateResult.Fail("Invalid Username or Password");
 
 
@@ -73,28 +81,32 @@ namespace openRoadsWebAPI.Security
                 new Claim(ClaimTypes.Name, person.FirstName),
             };
 
-            //foreach (var role in user.KorisniciUloge)
-            //{
-            //    claims.Add(new Claim(ClaimTypes.Role, role.Uloga.Naziv));
-            //}
 
-            var employeeRoles = _context.EmployeeRoles.ToList();
-            var employeeRolesList = _context.EmployeeEmployeeRoles.ToList();
-
-            foreach (var x in employeeRolesList)
+            if (admin != null)
             {
-                if (user.EmployeeId == x.EmployeeId)
-                {
-                    foreach (var y in employeeRoles)
-                    {
-                        if (x.EmployeeRolesId == y.EmployeeRolesId)
-                        {
-                            claims.Add(new Claim(ClaimTypes.Role, y.Name));
-                        }
-                    }
+                var employeeRoles = _context.EmployeeRoles.ToList();
+                var employeeRolesList = _context.EmployeeEmployeeRoles.ToList();
 
-                    break;
+                foreach (var x in employeeRolesList)
+                {
+                    if (admin.EmployeeId == x.EmployeeId)
+                    {
+                        foreach (var y in employeeRoles)
+                        {
+                            if (x.EmployeeRolesId == y.EmployeeRolesId)
+                            {
+                                claims.Add(new Claim(ClaimTypes.Role, y.Name));
+                            }
+                        }
+
+                        break;
+                    }
                 }
+            }
+
+            if (client != null)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Client"));
             }
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);
