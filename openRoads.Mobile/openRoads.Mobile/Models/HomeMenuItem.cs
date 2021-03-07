@@ -7,7 +7,8 @@ namespace openRoads.Mobile.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        VehicleOffer
     }
     public class HomeMenuItem
     {

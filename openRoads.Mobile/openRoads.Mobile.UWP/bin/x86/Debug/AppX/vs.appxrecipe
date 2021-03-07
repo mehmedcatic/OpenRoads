@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T15:09:13.281</Modified>
+      <Modified>2021-03-07T22:14:37.646</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\openRoads.Mobile.UWP.exe">
       <PackagePath>entrypoint\openRoads.Mobile.UWP.exe</PackagePath>
-      <Modified>2021-03-04T15:09:12.093</Modified>
+      <Modified>2021-03-07T22:14:36.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\.nuget\packages\flurl\3.0.1\lib\netstandard2.0\Flurl.dll">
       <PackagePath>Flurl.dll</PackagePath>
@@ -736,11 +736,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\bin\Debug\netstandard2.0\openRoads.Mobile.dll">
       <PackagePath>openRoads.Mobile.dll</PackagePath>
-      <Modified>2021-03-04T15:33:31.896</Modified>
+      <Modified>2021-03-07T22:38:26.561</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\bin\Debug\netstandard2.0\openRoads.Model.dll">
       <PackagePath>openRoads.Model.dll</PackagePath>
-      <Modified>2021-03-04T15:28:26.526</Modified>
+      <Modified>2021-03-07T21:02:34.597</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -754,144 +754,259 @@
       <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
       <Modified>2020-03-24T21:31:52.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2021-03-04T13:26:09.020</Modified>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.126</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.192</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png">
+      <PackagePath>Assets\myLOGO1.png</PackagePath>
+      <Modified>2021-03-05T20:42:13.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:27.380</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:27.400</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.993</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:29.110</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:27.497</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:27.520</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.804</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.819</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.886</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.834</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.852</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.732</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.746</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.590</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:28.666</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:29.835</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:29.858</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:27.734</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2021-03-05T20:42:27.776</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\LargeTile.scale-100.png">
       <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.632</Modified>
+      <Modified>2021-03-05T20:42:28.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\LargeTile.scale-200.png">
       <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.635</Modified>
+      <Modified>2021-03-05T20:42:28.261</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\LargeTile.scale-400.png">
       <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.637</Modified>
+      <Modified>2021-03-05T20:42:28.545</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SmallTile.scale-100.png">
       <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.796</Modified>
+      <Modified>2021-03-05T20:42:27.364</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SmallTile.scale-200.png">
       <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.798</Modified>
+      <Modified>2021-03-05T20:42:27.421</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SmallTile.scale-400.png">
       <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.800</Modified>
+      <Modified>2021-03-05T20:42:27.454</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.802</Modified>
+      <Modified>2021-03-05T20:42:28.925</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.805</Modified>
+      <Modified>2021-03-05T20:42:29.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\SplashScreen.scale-400.png">
       <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.814</Modified>
+      <Modified>2021-03-05T20:42:29.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square150x150Logo.scale-100.png">
       <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.816</Modified>
+      <Modified>2021-03-05T20:42:27.473</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.818</Modified>
+      <Modified>2021-03-05T20:42:27.555</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square150x150Logo.scale-400.png">
       <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.820</Modified>
+      <Modified>2021-03-05T20:42:27.690</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.822</Modified>
+      <Modified>2021-03-05T20:42:28.719</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.824</Modified>
+      <Modified>2021-03-05T20:42:28.790</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.826</Modified>
+      <Modified>2021-03-05T20:42:28.760</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.scale-100.png">
       <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.828</Modified>
+      <Modified>2021-03-05T20:42:28.561</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.839</Modified>
+      <Modified>2021-03-05T20:42:28.605</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.scale-400.png">
       <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.988</Modified>
+      <Modified>2021-03-05T20:42:28.624</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.targetsize-16.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.990</Modified>
+      <Modified>2021-03-05T20:42:28.638</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.targetsize-256.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.993</Modified>
+      <Modified>2021-03-05T20:42:28.705</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Square44x44Logo.targetsize-48.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.994</Modified>
+      <Modified>2021-03-05T20:42:28.679</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:08.998</Modified>
+      <Modified>2021-03-05T20:42:29.814</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\StoreLogo.scale-200.png">
       <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:09.001</Modified>
+      <Modified>2021-03-05T20:42:29.885</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\StoreLogo.scale-400.png">
       <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:09.003</Modified>
+      <Modified>2021-03-05T20:42:29.926</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Wide310x150Logo.scale-100.png">
       <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:09.012</Modified>
+      <Modified>2021-03-05T20:42:27.711</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:09.014</Modified>
+      <Modified>2021-03-05T20:42:27.844</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\Wide310x150Logo.scale-400.png">
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-03-04T13:26:09.016</Modified>
+      <Modified>2021-03-05T20:42:28.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\xamarin_logo.png">
       <PackagePath>xamarin_logo.png</PackagePath>
@@ -909,17 +1024,21 @@
       <PackagePath>cancel.png</PackagePath>
       <Modified>2021-03-04T13:26:09.710</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2021-03-04T13:26:09.020</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\openRoads.Mobile.UWP.xr.xml">
       <PackagePath>openRoads.Mobile.UWP.xr.xml</PackagePath>
       <Modified>2021-03-04T13:49:22.244</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-03-04T15:09:11.952</Modified>
+      <Modified>2021-03-07T22:14:35.845</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-03-04T15:09:11.952</Modified>
+      <Modified>2021-03-07T22:14:35.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.18362.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -935,11 +1054,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-03-04T13:49:24.659</Modified>
+      <Modified>2021-03-07T16:33:43.144</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\Core\openRoads.Mobile.UWP.exe">
       <PackagePath>openRoads.Mobile.UWP.exe</PackagePath>
-      <Modified>2021-03-04T15:09:13.276</Modified>
+      <Modified>2021-03-07T22:14:37.639</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

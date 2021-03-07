@@ -16,5 +16,10 @@ namespace openRoads.Mobile.Views
         {
             InitializeComponent();
         }
+
+        private void Button_OnClicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new LandingPageView();
+        }
     }
 }

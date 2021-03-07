@@ -15,7 +15,8 @@ namespace openRoads.Mobile
 
             DependencyService.Register<MockDataStore>();
             //MainPage = new MainPage();
-            MainPage = new LoginPage();
+            //MainPage = new LoginPage();
+            MainPage = new LandingPageView();
         }
 
         protected override void OnStart()

@@ -5,20 +5,31 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:openRoads.Mobile.ViewModels;assembly=openRoads.Mobile"
              mc:Ignorable="d"
-             x:Class="openRoads.Mobile.Views.LoginPage">
+             x:Class="openRoads.Mobile.Views.LoginPage"
+             Padding="20"
+             BackgroundColor="LightSteelBlue">
     <ContentPage.BindingContext>
         <viewModels:LoginViewModel></viewModels:LoginViewModel>
     </ContentPage.BindingContext>
-    <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" Padding="10" VerticalOptions="CenterAndExpand">
-            <Label  Text="Username:"></Label>
-            <Entry x:Name="Username" Text="{Binding Username}"></Entry>
 
-            <Label  Text="Password:"></Label>
-            <Entry Text="{Binding Password}" IsPassword="True"></Entry>
+        <StackLayout>
 
-            <Button Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" Text="Login"></Button>
-            <Label IsVisible="{Binding IsBusy}" Text="..."></Label>
+            <StackLayout HorizontalOptions="FillAndExpand" Padding="10" VerticalOptions="CenterAndExpand" Spacing="10">
+
+                <Label  Text="Username:" TextColor="White"></Label>
+                <Entry x:Name="Username" Text="{Binding Username}" TextColor="CornflowerBlue"></Entry>
+
+                <Label  Text="Password:" TextColor="White"></Label>
+                <Entry Text="{Binding Password}" IsPassword="True" TextColor="CornflowerBlue"></Entry>
+
+                <Button Command="{Binding LoginCommand}"  HorizontalOptions="FillAndExpand" Text="Login" CornerRadius="3"
+                        BackgroundColor="CornflowerBlue" TextColor="White"></Button>
+
+                <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="True"></ActivityIndicator>
+            </StackLayout>
+
+            <Button Text="Back" BackgroundColor="White" TextColor="CornflowerBlue" HorizontalOptions="End" 
+                    CornerRadius="3" Clicked="Button_OnClicked"></Button>
+
         </StackLayout>
-    </ContentPage.Content>
 </ContentPage>

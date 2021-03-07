@@ -36,6 +36,9 @@ namespace openRoads.Mobile.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
+                    case (int)MenuItemType.VehicleOffer:
+                        MenuPages.Add(id, new NavigationPage(new VehicleOfferView()));
+                        break;
                 }
             }
 

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</Source>
+    <SmallTileSource>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</SmallTileSource>
+    <MediumTileSource>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</MediumTileSource>
+    <WideTileSource>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</WideTileSource>
+    <LargeTileSource>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</LargeTileSource>
+    <AppIconSource>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</AppIconSource>
+    <SplashScreenSource>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</SplashScreenSource>
+    <PackageLogoSource>C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\Assets\myLOGO1.png</PackageLogoSource>
+  </PropertyGroup>
+</Project>

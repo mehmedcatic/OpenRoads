@@ -49,7 +49,11 @@ namespace openRoads.Mobile
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "Invalid username or password!", "OK");
                 }
-            
+
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "An error has occured...Please try again later!", "OK");
+                }
                 throw;
             }
         }

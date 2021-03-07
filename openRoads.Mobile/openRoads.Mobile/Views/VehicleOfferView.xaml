@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:openRoads.Mobile.ViewModels;assembly=openRoads.Mobile"
+             xmlns:converters="clr-namespace:openRoads.Mobile.Converters;assembly=openRoads.Mobile"
+             mc:Ignorable="d"
+             x:Class="openRoads.Mobile.Views.VehicleOfferView">
+    <ContentPage.BindingContext>
+        <viewModels:VehicleOfferViewModel></viewModels:VehicleOfferViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <StackLayout Padding="20">
+            <Label Text="Please select reservation date to check our suitable offer"
+                   HorizontalOptions="Start" />
+            
+            <StackLayout Orientation="Vertical">
+                <Label Text="Start date" VerticalOptions="Start" FontSize="13"></Label>
+                <DatePicker VerticalOptions="End" ></DatePicker>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="End date" VerticalOptions="Start" FontSize="13"></Label>
+                <DatePicker VerticalOptions="End"></DatePicker>
+            </StackLayout>
+
+            <Picker ItemsSource="{Binding VehicleFuelTypeList}" SelectedItem="{Binding SelectedFuelType}" ItemDisplayBinding="{Binding Name}" Title="Please select fuel type"></Picker>
+            <Picker ItemsSource="{Binding VehicleTransmissionList}" SelectedItem="{Binding SelectedTransmissionType}" ItemDisplayBinding="{Binding Name}" Title="Please select transmission type"></Picker>
+            <ListView ItemsSource="{Binding VehicleList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" Orientation="Horizontal">
+                                <StackLayout VerticalOptions="Start">
+                                    <Image Source="{Binding Picture, Converter={StaticResource imgConv}}" WidthRequest="250"></Image>
+                                </StackLayout>
+
+                                <StackLayout VerticalOptions="End">
+
+                                    <StackLayout Orientation="Horizontal" Padding="7">
+                                        <Label Text="Manufacturer:" FontSize="13"></Label>
+                                        <Label Text="{Binding VehicleName}" 
+                                               LineBreakMode="NoWrap" 
+                                               Style="{DynamicResource ListItemTextStyle}" 
+                                               FontSize="13"/>
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Padding="7">
+                                        <Label Text="Manufactured year:" FontSize="13"></Label>
+                                        <Label Text="{Binding ManufacturedYear}" 
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Padding="7">
+                                        <Label Text="Daily price:" FontSize="13"></Label>
+                                        <Label Text="{Binding DailyPrice}" 
+                                                LineBreakMode="NoWrap"
+                                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                                FontSize="13" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Padding="7">
+                                        <Label Text="Power in hp:" FontSize="13"></Label>
+                                        <Label Text="{Binding PowerHP}" 
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13" />
+                                    </StackLayout>
+
+                                    <StackLayout Orientation="Horizontal" Padding="7">
+                                        <Button Text="SHOW ME MORE" Padding="5" BackgroundColor="DodgerBlue" CornerRadius="2" 
+                                                TextColor="White"></Button>
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

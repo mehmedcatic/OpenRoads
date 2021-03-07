@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using openRoads.Model;
 using openRoads.Model.Requests;
+using openRoadsWebAPI.Exceptions;
 using openRoadsWebAPI.Helpers;
 using openRoadsWebAPI.Models;
 
@@ -99,6 +100,59 @@ namespace openRoadsWebAPI.Service
 
             return _mapper.Map<List<ClientModel>>(clientList);
 
+        }
+
+        public override ClientModel Insert(ClientUpdateRequest request)
+        {
+            var LoginDataCheck = _context.LoginData.FirstOrDefault(x => x.Username == request.Username);
+            if (LoginDataCheck != null)
+                throw new UserException("Username already exists, try another one!");
+
+            var personCheck = _context.Person.FirstOrDefault(x => x.Email == request.Email);
+            if (personCheck != null)
+                throw new UserException("Email already exists, try another one!");
+
+            request.PasswordSalt = HelperClass.GenerateSalt();
+            request.PasswordHash = HelperClass.GenerateHash(request.PasswordSalt, request.CleasPassword);
+
+            LoginData newData = new LoginData
+            {
+                Username = request.Username,
+                PasswordSalt = request.PasswordSalt,
+                PasswordHash = request.PasswordHash
+            };
+
+            _context.LoginData.Add(newData);
+            _context.SaveChanges();
+
+            Person newPerson = new Person
+            {
+                Address = request.Address,
+                City = request.City,
+                CountryId = request.CountryId,
+                DateOfBirth = request.DateOfBirth,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Email = request.Email,
+                PhoneNumber = request.PhoneNumber,
+                LoginDataId = newData.LoginDataId
+            };
+
+            _context.Add(newPerson);
+            _context.SaveChanges();
+
+
+            Client newClient = new Client
+            {
+                PersonId = newPerson.PersonId,
+                Active = true,
+                RegistrationDate = DateTime.Now
+            };
+
+            _context.Client.Add(newClient);
+            _context.SaveChanges();
+
+            return _mapper.Map<ClientModel>(newClient);
         }
 
         public override ClientModel Update(int id, ClientUpdateRequest request)

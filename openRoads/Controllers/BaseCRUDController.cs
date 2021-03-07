@@ -22,7 +22,7 @@ namespace openRoadsWebAPI.Controllers
 
 
         [HttpPost]
-        public T Insert(TInsert request)
+        public virtual T Insert(TInsert request)
         {
             return _service.Insert(request);
         }

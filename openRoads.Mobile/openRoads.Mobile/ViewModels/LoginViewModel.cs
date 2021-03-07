@@ -48,11 +48,17 @@ namespace openRoads.Mobile.ViewModels
                     Username = Username
                 };
                 var obj = await _service.Get<dynamic>(request);
-            
+
                 if (obj == null)
+                {
                     await Application.Current.MainPage.DisplayAlert("Error", "Invalid username or password!", "OK");
+                    IsBusy = false;
+                }
                 else
+                {
                     Application.Current.MainPage = new MainPage();
+                    IsBusy = false;
+                }
             }
             catch (Exception ex)
             {
