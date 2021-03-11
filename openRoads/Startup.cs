@@ -152,12 +152,14 @@ namespace openRoads
             services
                 .AddScoped<IBaseCRUDService<VehicleModelModel, VehicleModelSearchRequest, VehicleModelAddUpdateRequest,
                     VehicleModelAddUpdateRequest>, VehicleModelService>();
-
-
+            services
+                .AddScoped<IBaseCRUDService<LoginDataModel, object, LoginDataInsertUpdateRequest,
+                    LoginDataInsertUpdateRequest>, LoginDataService>();
+            services
+                .AddScoped<IBaseCRUDService<PersonModel, object, PersonInsertUpdateRequest, PersonInsertUpdateRequest>,
+                    PersonService>();
 
             //Services that implement IBase interface
-            services.AddScoped<IBaseService<PersonModel, object>, BaseService<PersonModel, object, Person>>();
-            services.AddScoped<IBaseService<LoginDataModel, object>, BaseService<LoginDataModel, object, LoginData>>();
             services
                 .AddScoped<IBaseService<EmployeeEmployeeRolesModel, object>, EmployeeEmployeeRolesService>();
 

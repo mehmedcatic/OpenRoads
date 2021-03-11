@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using openRoads.Mobile.Converters;
+using openRoads.Mobile.Helpers;
 using openRoads.Mobile.ViewModels;
 using openRoads.Model;
 using Xamarin.Forms;
@@ -53,32 +54,12 @@ namespace openRoads.Mobile.Views
             }
         }
 
-        private async Task LoadUser()
-        {
-            ClientModel user = await _service.GetById<ClientModel>(APIService.LoggedUserId);
-            if (user != null)
-            {
-                if (user.ProfilePicture.Length != 0)
-                {
-                    ImageConverter converter = new ImageConverter();
-                    userImg.Source = (ImageSource)converter.Convert(user.ProfilePicture, null, null, null);
-                    userImg.HeightRequest = 45;
-                    userImg.CornerRadius = 25;
-                }
-                else
-                {
-                    userImg.Source = ImageSource.FromResource("openRoads.Mobile.Resources.userAvatar.png");
-                    userImg.HeightRequest = 45;
-                    userImg.CornerRadius = 25;
-                }
-            }
-        }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             await model.Init();
-            await LoadUser();
+            await Helper.LoadUserImage(_service, userImg);
         }
 
         private async void Button_OnClicked(object sender, EventArgs e)
@@ -100,14 +81,13 @@ namespace openRoads.Mobile.Views
 
         private void UserImg_OnClicked(object sender, EventArgs e)
         {
-            DisplayAlert("Newst", "test", "OK");
+            Helper.UserImgOnClick();
 
         }
 
         private void SignOutBtn_OnClicked(object sender, EventArgs e)
         {
-            APIService.LoggedUserId = 0;
-            Application.Current.MainPage = new LandingPageView();
+            Helper.SignOut();
         }
 
 

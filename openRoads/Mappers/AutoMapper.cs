@@ -42,9 +42,11 @@ namespace openRoadsWebAPI.Mappers
 
 
             CreateMap<LoginData, LoginDataModel>().ReverseMap();
+            CreateMap<LoginDataInsertUpdateRequest, LoginData>().ReverseMap();
 
 
             CreateMap<Person, PersonModel>().ReverseMap();
+            CreateMap<PersonInsertUpdateRequest, Person>().ReverseMap();
 
 
             CreateMap<Rating, RatingModel>().ReverseMap();
