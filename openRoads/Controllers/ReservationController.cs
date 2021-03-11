@@ -10,9 +10,11 @@ using openRoadsWebAPI.Service;
 
 namespace openRoadsWebAPI.Controllers
 {
-    public class ReservationController : BaseController<ReservationModel, ReservationSearchRequest>
+    public class ReservationController : BaseCRUDController<ReservationModel, ReservationSearchRequest, 
+        ReservationInsertUpdateRequest, ReservationInsertUpdateRequest>
     {
-        public ReservationController(IBaseService<ReservationModel, ReservationSearchRequest> service) : base(service)
+        public ReservationController(IBaseCRUDService<ReservationModel, ReservationSearchRequest, 
+            ReservationInsertUpdateRequest, ReservationInsertUpdateRequest> service) : base(service)
         {
         }
     }

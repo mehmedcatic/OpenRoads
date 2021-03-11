@@ -6,7 +6,8 @@
              xmlns:viewModels="clr-namespace:openRoads.Mobile.ViewModels;assembly=openRoads.Mobile"
              xmlns:converters="clr-namespace:openRoads.Mobile.Converters;assembly=openRoads.Mobile"
              mc:Ignorable="d"
-             x:Class="openRoads.Mobile.Views.VehicleOfferView">
+             x:Class="openRoads.Mobile.Views.VehicleOfferView"
+             BackgroundColor="LightSteelBlue">
     <ContentPage.BindingContext>
         <viewModels:VehicleOfferViewModel></viewModels:VehicleOfferViewModel>
     </ContentPage.BindingContext>
@@ -15,28 +16,42 @@
             <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ContentPage.Content>
+    <!--<ContentPage.Content>-->
+
+    <StackLayout>
+
+        <StackLayout Padding="10" HeightRequest="60" Orientation="Horizontal" BackgroundColor="DodgerBlue">
+            <ImageButton x:Name="userImg" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Clicked="UserImg_OnClicked"></ImageButton>
+            <Button x:Name="SignOutBtn" HorizontalOptions="End" VerticalOptions="Center" Text="Sign out" BackgroundColor="White" 
+                    TextColor="CornflowerBlue" Clicked="SignOutBtn_OnClicked" CornerRadius="3"></Button>
+        </StackLayout>
+      
 
         <StackLayout Padding="20">
-            <Label Text="Please select reservation date to check our suitable offer"
-                   HorizontalOptions="Start" />
+            <Label Text="Please select reservation date to check for suitable offer"
+                   HorizontalOptions="Start" FontAttributes="Bold" FontSize="20" TextColor="White"/>
             
-            <StackLayout Orientation="Vertical">
-                <Label Text="Start date" VerticalOptions="Start" FontSize="13"></Label>
-                <DatePicker VerticalOptions="End" ></DatePicker>
-            </StackLayout>
-            <StackLayout Orientation="Vertical">
-                <Label Text="End date" VerticalOptions="Start" FontSize="13"></Label>
-                <DatePicker VerticalOptions="End"></DatePicker>
-            </StackLayout>
+            <StackLayout BackgroundColor="White" Padding="10">
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="StartDateLabel" Text="Start date" VerticalOptions="Start" FontSize="15"></Label>
+                    <DatePicker x:Name="StartDate" VerticalOptions="End" DateSelected="StartDate_OnDateSelected"></DatePicker>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label x:Name="EndDateLabel" Text="End date" VerticalOptions="Start" FontSize="15"></Label>
+                    <DatePicker x:Name="EndDate" VerticalOptions="End" DateSelected="EndDate_OnDateSelected"></DatePicker>
+                </StackLayout>
 
-            <Picker ItemsSource="{Binding VehicleFuelTypeList}" SelectedItem="{Binding SelectedFuelType}" ItemDisplayBinding="{Binding Name}" Title="Please select fuel type"></Picker>
-            <Picker ItemsSource="{Binding VehicleTransmissionList}" SelectedItem="{Binding SelectedTransmissionType}" ItemDisplayBinding="{Binding Name}" Title="Please select transmission type"></Picker>
+                <Picker ItemsSource="{Binding VehicleFuelTypeList}" SelectedItem="{Binding SelectedFuelType}" ItemDisplayBinding="{Binding Name}" 
+                        Title="Please select fuel type"></Picker>
+                <Picker ItemsSource="{Binding VehicleTransmissionList}" SelectedItem="{Binding SelectedTransmissionType}" 
+                        ItemDisplayBinding="{Binding Name}" Title="Please select transmission type"></Picker>
+            </StackLayout>
+            
             <ListView ItemsSource="{Binding VehicleList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10" Orientation="Horizontal">
+                            <StackLayout Margin="8" Padding="10" Orientation="Horizontal" BackgroundColor="White">
                                 <StackLayout VerticalOptions="Start">
                                     <Image Source="{Binding Picture, Converter={StaticResource imgConv}}" WidthRequest="250"></Image>
                                 </StackLayout>
@@ -44,7 +59,7 @@
                                 <StackLayout VerticalOptions="End">
 
                                     <StackLayout Orientation="Horizontal" Padding="7">
-                                        <Label Text="Manufacturer:" FontSize="13"></Label>
+                                        <Label Text="Vehicle:" FontSize="13"></Label>
                                         <Label Text="{Binding VehicleName}" 
                                                LineBreakMode="NoWrap" 
                                                Style="{DynamicResource ListItemTextStyle}" 
@@ -77,7 +92,7 @@
 
                                     <StackLayout Orientation="Horizontal" Padding="7">
                                         <Button Text="SHOW ME MORE" Padding="5" BackgroundColor="DodgerBlue" CornerRadius="2" 
-                                                TextColor="White"></Button>
+                                                TextColor="White" Clicked="Button_OnClicked" AutomationId="{Binding VehicleId}"></Button>
                                     </StackLayout>
 
                                 </StackLayout>
@@ -88,5 +103,8 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-    </ContentPage.Content>
+
+    </StackLayout>
+
+    <!--</ContentPage.Content>-->
 </ContentPage>

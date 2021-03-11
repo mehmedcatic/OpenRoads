@@ -173,7 +173,7 @@ namespace openRoads.Mobile.ViewModels
 
             return true;
         }
-        async Task Register()
+        public async Task Register()
         {
             IsBusy = true;
             APIService.Username = "adminDesktop";
@@ -225,16 +225,22 @@ namespace openRoads.Mobile.ViewModels
 
                     if (obj == null)
                     {
-                        await Application.Current.MainPage.DisplayAlert("Error", "Username or Email already exists, try another one!", "OK");
+                        await Application.Current.MainPage.DisplayAlert("Error",
+                            "Username or Email already exists, try another one!", "OK");
                         IsBusy = false;
                     }
                     else
                     {
-                        await Application.Current.MainPage.DisplayAlert("Success!", "Your account has been successfully created!", "OK");
+                        await Application.Current.MainPage.DisplayAlert("Success!",
+                            "Your account has been successfully created!", "OK");
                         Application.Current.MainPage = new LoginPage();
                     }
                 }
                 catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
                 {
                     IsBusy = false;
                 }

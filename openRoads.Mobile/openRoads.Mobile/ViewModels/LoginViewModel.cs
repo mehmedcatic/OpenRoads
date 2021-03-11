@@ -41,28 +41,35 @@ namespace openRoads.Mobile.ViewModels
             APIService.Username = Username;
             APIService.Password = Password;
 
+            
             try
             {
                 ClientSearchRequest request = new ClientSearchRequest
                 {
                     Username = Username
                 };
-                var obj = await _service.Get<dynamic>(request);
+                var obj = await _service.Get<List<ClientModel>>(request);
 
                 if (obj == null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Error", "Invalid username or password!", "OK");
-                    IsBusy = false;
                 }
                 else
                 {
-                    Application.Current.MainPage = new MainPage();
-                    IsBusy = false;
+                    for (int i = 0; i < obj.Count; i++)
+                    {
+                        APIService.LoggedUserId = obj[i].ClientId;
+                    }
+                    Application.Current.MainPage = new VehicleOfferView();
                 }
             }
             catch (Exception ex)
             {
-
+                Console.Write(ex.Message);
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
     }

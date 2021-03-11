@@ -27,3 +27,4 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mo
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\VehicleOfferView.xaml.g.cs
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\LandingPageView.xaml.g.cs
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\RegisterView.xaml.g.cs
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\ReservationView.xaml.g.cs

@@ -11,7 +11,8 @@ namespace openRoadsWebAPI.Models
         public int ClientId { get; set; }
         public DateTime RegistrationDate { get; set; }
         public bool Active { get; set; }
-
+        public byte[] ProfilePicture { get; set; }
+        public byte[] ProfilePictureThumb { get; set; }
 
         [ForeignKey("PersonId")]
         public Person Person { get; set; }

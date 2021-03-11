@@ -5,10 +5,11 @@
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
             xmlns:views="clr-namespace:openRoads.Mobile.Views"
-            x:Class="openRoads.Mobile.Views.MainPage">
-
+            x:Class="openRoads.Mobile.Views.MainPage"
+            Title="Home">
+ 
     <MasterDetailPage.Master>
-        <views:MenuPage />
+        <views:VehicleOfferView />
     </MasterDetailPage.Master>
 
     <MasterDetailPage.Detail>
@@ -19,7 +20,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <views:VehicleOfferView />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

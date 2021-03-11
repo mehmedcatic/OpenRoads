@@ -76,6 +76,12 @@ namespace openRoadsWebAPI.Migrations
                     b.Property<int>("PersonId")
                         .HasColumnType("int");
 
+                    b.Property<byte[]>("ProfilePicture")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("ProfilePictureThumb")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("datetime2");
 

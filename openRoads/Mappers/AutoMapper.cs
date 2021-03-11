@@ -48,9 +48,11 @@ namespace openRoadsWebAPI.Mappers
 
 
             CreateMap<Rating, RatingModel>().ReverseMap();
+            CreateMap<RatingInsertUpdateRequest, Rating>().ReverseMap();
 
 
             CreateMap<Reservation, ReservationModel>().ReverseMap();
+            CreateMap<ReservationInsertUpdateRequest, Reservation>().ReverseMap();
 
 
             CreateMap<Vehicle, openRoads.Model.VehicleModel>().ReverseMap();

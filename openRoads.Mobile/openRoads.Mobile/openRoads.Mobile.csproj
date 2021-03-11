@@ -11,15 +11,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\backIcon.png" />
     <None Remove="Resources\iconUser.png" />
     <None Remove="Resources\myLOGO.png" />
+    <None Remove="Resources\myLOGO1.png" />
     <None Remove="Resources\road.jpg" />
+    <None Remove="Resources\userAvatar.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\backIcon.png" />
     <EmbeddedResource Include="Resources\iconUser.png" />
     <EmbeddedResource Include="Resources\myLOGO.png" />
+    <EmbeddedResource Include="Resources\myLOGO1.png" />
     <EmbeddedResource Include="Resources\road.jpg" />
+    <EmbeddedResource Include="Resources\userAvatar.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +52,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\RegisterView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ReservationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\VehicleOfferView.xaml">

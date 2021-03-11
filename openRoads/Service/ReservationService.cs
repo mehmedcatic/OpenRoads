@@ -9,7 +9,8 @@ using openRoadsWebAPI.Models;
 
 namespace openRoadsWebAPI.Service
 {
-    public class ReservationService : BaseService<ReservationModel, ReservationSearchRequest, Reservation>
+    public class ReservationService : BaseCRUDService<ReservationModel, ReservationSearchRequest, Reservation, 
+        ReservationInsertUpdateRequest, ReservationInsertUpdateRequest>
     {
         public ReservationService(MyDbContext context, IMapper mapper) : base(context, mapper)
         {
@@ -128,5 +129,7 @@ namespace openRoadsWebAPI.Service
 
             return _mapper.Map<List<ReservationModel>>(query);
         }
+
+        
     }
 }

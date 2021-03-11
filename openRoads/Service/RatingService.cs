@@ -9,11 +9,12 @@ using openRoadsWebAPI.Models;
 
 namespace openRoadsWebAPI.Service
 {
-    public class RatingService : BaseService<RatingModel, RatingSearchRequest, Rating>
+    public class RatingService : BaseCRUDService<RatingModel, RatingSearchRequest, Rating, RatingInsertUpdateRequest, RatingInsertUpdateRequest>
     {
         public RatingService(MyDbContext context, IMapper mapper) : base(context, mapper)
         {
         }
+        
 
 
         //public override List<BranchModel> Get(BranchSearchRequest search)

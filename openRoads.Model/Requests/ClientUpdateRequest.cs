@@ -9,6 +9,8 @@ namespace openRoads.Model.Requests
         public int ClientId { get; set; }
         public DateTime RegistrationDate { get; set; }
         public bool Active { get; set; }
+        public byte[] ProfilePicture { get; set; }
+        public byte[] ProfilePictureThumb { get; set; }
 
         public int LoginDataId { get; set; }
         public string Username { get; set; }

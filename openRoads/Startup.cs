@@ -98,6 +98,14 @@ namespace openRoads
                 .AddScoped<IEmployeeService, EmployeeService>();
 
             services
+                .AddScoped<IBaseCRUDService<ReservationModel, ReservationSearchRequest, ReservationInsertUpdateRequest,
+                    ReservationInsertUpdateRequest>, ReservationService>();
+
+            services
+                .AddScoped<IBaseCRUDService<RatingModel, RatingSearchRequest, RatingInsertUpdateRequest,
+                    RatingInsertUpdateRequest>, RatingService>();
+
+            services
                 .AddScoped<IBaseCRUDService<VehicleModel, VehicleSearchRequest, VehicleInsertUpdateRequest,
                     VehicleInsertUpdateRequest>, VehicleService>();
             services
@@ -146,11 +154,8 @@ namespace openRoads
                     VehicleModelAddUpdateRequest>, VehicleModelService>();
 
 
+
             //Services that implement IBase interface
-
-            services.AddScoped<IBaseService<RatingModel, RatingSearchRequest>, RatingService>();
-            services.AddScoped<IBaseService<ReservationModel, ReservationSearchRequest>, ReservationService>();
-
             services.AddScoped<IBaseService<PersonModel, object>, BaseService<PersonModel, object, Person>>();
             services.AddScoped<IBaseService<LoginDataModel, object>, BaseService<LoginDataModel, object, LoginData>>();
             services

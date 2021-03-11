@@ -10,9 +10,10 @@ using openRoadsWebAPI.Service;
 
 namespace openRoadsWebAPI.Controllers
 {
-    public class RatingController : BaseController<RatingModel, RatingSearchRequest>
+    public class RatingController : BaseCRUDController<RatingModel, RatingSearchRequest, RatingInsertUpdateRequest, RatingInsertUpdateRequest>
     {
-        public RatingController(IBaseService<RatingModel, RatingSearchRequest> service) : base(service)
+        public RatingController(IBaseCRUDService<RatingModel, RatingSearchRequest, RatingInsertUpdateRequest, 
+            RatingInsertUpdateRequest> service) : base(service)
         {
         }
     }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -10,12 +12,13 @@ using Xamarin.Forms;
 
 namespace openRoads.Mobile.ViewModels
 {
-    
+
 
     public class VehicleOfferViewModel : BaseViewModel
     {
         public class VehicleToDisplay
         {
+            public int VehicleId { get; set; }
             public string VehicleName { get; set; }
             public int ManufacturedYear { get; set; }
             public string DailyPrice { get; set; }
@@ -29,9 +32,8 @@ namespace openRoads.Mobile.ViewModels
         private readonly APIService _vehicleManufacturerService = new APIService("VehicleManufacturer");
         private readonly APIService _vehicleModelService = new APIService("VehicleModel");
         private readonly APIService _vehicleTransmissionService = new APIService("VehicleTransmissionType");
-        private readonly APIService _vehicleTypeService = new APIService("VehicleType");
         private readonly APIService _vehicleFuelService = new APIService("VehicleFuelType");
-        private readonly APIService _vehicleCategoryService = new APIService("VehicleCategory");
+        private readonly APIService _reservationService = new APIService("Reservation");
 
         public VehicleOfferViewModel()
         {
@@ -43,6 +45,7 @@ namespace openRoads.Mobile.ViewModels
             new ObservableCollection<Model.VehicleFuelTypeModel>();
         public ObservableCollection<Model.VehicleTransmissionTypeModel> VehicleTransmissionList { get; set; } =
             new ObservableCollection<VehicleTransmissionTypeModel>();
+
 
 
         VehicleFuelTypeModel _selectedFuelType = null;
@@ -74,6 +77,37 @@ namespace openRoads.Mobile.ViewModels
             }
         }
 
+        public DateTime _selectedDateFrom;
+        public DateTime SelectedDateFrom
+        {
+            get { return _selectedDateFrom; }
+            set
+            {
+                SetProperty(ref _selectedDateFrom, value);
+                if (value != new DateTime(0001, 1, 1))
+                {
+                    InitCommand.Execute(null);
+                }
+
+            }
+        }
+
+        public DateTime _selectedDateTo;
+        public DateTime SelectedDateTo
+        {
+            get { return _selectedDateTo; }
+            set
+            {
+                SetProperty(ref _selectedDateTo, value);
+                if (value != new DateTime(0001, 1, 1))
+                {
+                    InitCommand.Execute(null);
+                }
+
+            }
+        }
+
+       
         public ICommand InitCommand { get; set; }
 
 
@@ -82,40 +116,84 @@ namespace openRoads.Mobile.ViewModels
             var vehicles = await _vehicleService.Get<List<Model.VehicleModel>>(request);
             var vehicleManufacturers = await _vehicleManufacturerService.Get<List<VehicleManufacturerModel>>(null);
             var vehicleModels = await _vehicleModelService.Get<List<VehicleModelModel>>(null);
+            var reservationsList = await _reservationService.Get<List<ReservationModel>>(null);
+            DateTime dateToCheck = new DateTime(0001, 1, 1);
+
+            bool vehicleRented = false;
 
             VehicleList.Clear();
+
+
             foreach (var x in vehicles)
             {
-                VehicleToDisplay newVehicle = new VehicleToDisplay();
-                newVehicle.Available = x.Available;
-                newVehicle.Picture = x.Picture;
-                newVehicle.DailyPrice = x.PriceByDay + " KM";
-                newVehicle.PowerHP = x.PowerInHp + " hp";
-                newVehicle.ManufacturedYear = x.ManufacturedYear;
+                vehicleRented = false;
 
-                foreach (var model in vehicleModels)
+                foreach (var reservation in reservationsList)
                 {
-                    if (x.VehicleModelId == model.VehicleModelId)
+
+                    if (reservation.VehicleId == x.VehicleId)
                     {
-                        foreach (var manufacturer in vehicleManufacturers)
+
+                        if (SelectedDateTo != dateToCheck)
                         {
-                            if (model.VehicleManufacturerId == manufacturer.VehicleManufacturerId)
+                            if (SelectedDateFrom >= reservation.DateFrom && SelectedDateFrom <= reservation.DateTo)
                             {
-                                newVehicle.VehicleName = manufacturer.Name + " " + model.Name;
-                                break;
+                                vehicleRented = true;
+                            }
+
+                            if ((SelectedDateFrom < reservation.DateFrom && SelectedDateFrom < reservation.DateTo)
+                                && (SelectedDateTo >= reservation.DateFrom && SelectedDateTo <= reservation.DateTo))
+                            {
+                                vehicleRented = true;
+                            }
+
+                            if (reservation.DateFrom >= SelectedDateFrom && reservation.DateTo <= SelectedDateTo)
+                            {
+                                if(reservation.DateTo > DateTime.Now)
+                                    vehicleRented = true;
                             }
                         }
 
-                        break;
                     }
                 }
-                VehicleList.Add(newVehicle);
+
+                if (!vehicleRented)
+                {
+
+                    VehicleToDisplay newVehicle = new VehicleToDisplay();
+                    newVehicle.VehicleId = x.VehicleId;
+                    newVehicle.Available = x.Available;
+                    newVehicle.Picture = x.Picture;
+                    newVehicle.DailyPrice = x.PriceByDay + " KM";
+                    newVehicle.PowerHP = x.PowerInHp + " hp";
+                    newVehicle.ManufacturedYear = x.ManufacturedYear;
+
+                    foreach (var model in vehicleModels)
+                    {
+                        if (x.VehicleModelId == model.VehicleModelId)
+                        {
+                            foreach (var manufacturer in vehicleManufacturers)
+                            {
+                                if (model.VehicleManufacturerId == manufacturer.VehicleManufacturerId)
+                                {
+                                    newVehicle.VehicleName = manufacturer.Name + " " + model.Name;
+                                    break;
+                                }
+                            }
+
+                            break;
+                        }
+                    }
+                    VehicleList.Add(newVehicle);
+                }
+
             }
         }
 
+
+
         public async Task Init()
         {
-            
             if (VehicleFuelTypeList.Count == 0)
             {
                 var vfList = await _vehicleFuelService.Get<List<VehicleFuelTypeModel>>(null);
@@ -136,19 +214,18 @@ namespace openRoads.Mobile.ViewModels
                 }
             }
 
-
             if (SelectedFuelType != null || SelectedTransmissionType != null)
             {
                 VehicleSearchRequest request = new VehicleSearchRequest();
-                if(SelectedFuelType != null)
+                if (SelectedFuelType != null)
                     request.VehicleFuelTypeId = SelectedFuelType.VehicleFuelTypeId;
                 if (SelectedTransmissionType != null)
                     request.VehicleTransmissionTypeId = SelectedTransmissionType.VehicleTransmissionTypeId;
-               
+
                 await LoadVehicles(request);
             }
 
-            if (SelectedTransmissionType == null && SelectedTransmissionType == null)
+            if (SelectedFuelType == null && SelectedTransmissionType == null)
                 await LoadVehicles();
 
 
