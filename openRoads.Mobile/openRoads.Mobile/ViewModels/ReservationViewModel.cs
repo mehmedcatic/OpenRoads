@@ -196,7 +196,7 @@ namespace openRoads.Mobile.ViewModels
 
             if (reservationSuccess != null)
             {
-                Application.Current.MainPage = new VehicleOfferView("success");
+                Application.Current.MainPage = new VehicleOfferView("success", reservationSuccess);
             }
 
         }

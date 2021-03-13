@@ -20,7 +20,6 @@ namespace openRoads.Mobile.ViewModels
         public MyProfileViewModel()
         {
             InitCommand = new Command(async () => await Init());
-            //CreateReservationCommand = new Command(async () => await Create());
         }
 
 
@@ -101,6 +100,13 @@ namespace openRoads.Mobile.ViewModels
             }
         }
 
+        string _countryString;
+        public string CountryString
+        {
+            get { return _countryString; }
+            set { SetProperty(ref _countryString, value); }
+        }
+
         DateTime _registrationDate;
         public DateTime RegistrationDate
         {
@@ -128,7 +134,14 @@ namespace openRoads.Mobile.ViewModels
                 var person = await _personService.GetById<PersonModel>(client.PersonId);
                 var loginData = await _loginDataService.GetById<LoginDataModel>(person.LoginDataId);
                 var country = await _countryService.GetById<CountryModel>(person.CountryId);
-                CountryList.Add(country);
+                //CountryList.Add(country);
+
+                var countries = await _countryService.Get<List<CountryModel>>(null);
+
+                foreach (var x in countries)
+                {
+                    CountryList.Add(x);
+                }
 
                 FirstName = person.FirstName;
                 LastName = person.LastName;
@@ -138,8 +151,9 @@ namespace openRoads.Mobile.ViewModels
                 Address = person.Address;
                 City = person.City;
                 Username = loginData.Username;
-                Password = "isjfoiss";
+                Password = "*****";
                 SelectedCountryModel = country;
+                CountryString = country.Name;
                 RegistrationDate = client.RegistrationDate;
                 ClientProfilePicture = client.ProfilePicture;
             }
@@ -150,5 +164,6 @@ namespace openRoads.Mobile.ViewModels
             }
             
         }
+
     }
 }

@@ -141,12 +141,14 @@ namespace openRoadsWebAPI.Service
             _context.Add(newPerson);
             _context.SaveChanges();
 
+            //byte[] userProfilePic = request.ProfilePicture;
 
             Client newClient = new Client
             {
                 PersonId = newPerson.PersonId,
                 Active = true,
-                RegistrationDate = DateTime.Now
+                RegistrationDate = DateTime.Now,
+                ProfilePicture = request.ProfilePicture
             };
 
             _context.Client.Add(newClient);
@@ -157,35 +159,54 @@ namespace openRoadsWebAPI.Service
 
         public override ClientModel Update(int id, ClientUpdateRequest request)
         {
-            var clientForUpdate = _context.Client.FirstOrDefault(x => x.ClientId == id);
-            var personForUpdate = _context.Person.FirstOrDefault(x => x.PersonId == clientForUpdate.PersonId);
-            var loginDataList = _context.LoginData.ToList();
-
-            if (personForUpdate != null)
+            try
             {
-                personForUpdate.CountryId = request.CountryId;
-                personForUpdate.LastName = request.LastName;
-                personForUpdate.FirstName = request.FirstName;
-                personForUpdate.Address = request.Address;
-                personForUpdate.City = request.City;
-                personForUpdate.DateOfBirth = request.DateOfBirth;
-                personForUpdate.Email = request.Email;
-                personForUpdate.PhoneNumber = request.PhoneNumber;
+                var clientForUpdate = _context.Client.FirstOrDefault(x => x.ClientId == id);
+                var personForUpdate = _context.Person.FirstOrDefault(x => x.PersonId == clientForUpdate.PersonId);
+                var loginDataList = _context.LoginData.ToList();
 
-                foreach (var x in loginDataList)
+                if (personForUpdate != null)
                 {
-                    if (x.LoginDataId == personForUpdate.LoginDataId)
+                    if (request.ProfilePicture != null)
+                        clientForUpdate.ProfilePicture = request.ProfilePicture;
+
+                    else
                     {
-                        x.PasswordSalt = HelperClass.GenerateSalt();
-                        x.PasswordHash = HelperClass.GenerateHash(x.PasswordSalt, request.CleasPassword);
-                        x.Username = request.Username;
+                        personForUpdate.CountryId = request.CountryId;
+                        personForUpdate.LastName = request.LastName;
+                        personForUpdate.FirstName = request.FirstName;
+                        personForUpdate.Address = request.Address;
+                        personForUpdate.City = request.City;
+                        personForUpdate.DateOfBirth = request.DateOfBirth;
+                        personForUpdate.Email = request.Email;
+                        personForUpdate.PhoneNumber = request.PhoneNumber;
+
+                        foreach (var x in loginDataList)
+                        {
+                            if (x.LoginDataId == personForUpdate.LoginDataId)
+                            {
+                                x.PasswordSalt = HelperClass.GenerateSalt();
+                                x.PasswordHash = HelperClass.GenerateHash(x.PasswordSalt, request.CleasPassword);
+                                x.Username = request.Username;
+
+                                break;
+                            }
+                        }
                     }
+
                 }
+
+                _context.SaveChanges();
+
+                return _mapper.Map<ClientModel>(clientForUpdate);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
 
-            _context.SaveChanges();
-
-            return _mapper.Map<ClientModel>(clientForUpdate);
         }
     }
 }

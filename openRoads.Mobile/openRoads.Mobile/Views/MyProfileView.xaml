@@ -32,43 +32,52 @@
 
                 <Image x:Name="UserImage" WidthRequest="400" 
                        HorizontalOptions="Center" VerticalOptions="Start"></Image>
+                <Button x:Name="UploadProfilePictureBtn" Text="UPLOAD PROFILE PICTURE" BackgroundColor="DodgerBlue" TextColor="White" HorizontalOptions="FillAndExpand" 
+                        Padding="8" Margin="3" CornerRadius="3" Clicked="UploadProfilePictureBtn_OnClicked" IsVisible="false"></Button>
 
                 <Label Text="First name:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" Text="{Binding FirstName}"></Entry>
+                <Entry x:Name="FirstNameEntry" IsReadOnly="True" Text="{Binding FirstName}"></Entry>
 
                 <Label Text="Last name:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" Text="{Binding LastName}"></Entry>
+                <Entry x:Name="LastNameEntry" IsReadOnly="True" Text="{Binding LastName}"></Entry>
 
                 <Label Text="Date of birth:" TextColor="White"></Label>
-                <DatePicker Date="{Binding DateOfBirth}" IsEnabled="False" BackgroundColor="White"></DatePicker>
+                <DatePicker x:Name="DateOfBirthEntry" Date="{Binding DateOfBirth}" IsEnabled="False" BackgroundColor="White"></DatePicker>
 
                 <Label Text="Phone number:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" Text="{Binding PhoneNumber}"></Entry>
+                <Entry x:Name="PhoneNumberEntry" IsReadOnly="True" Text="{Binding PhoneNumber}"></Entry>
 
                 <Label Text="Email:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" Text="{Binding Email}"></Entry>
+                <Entry x:Name="EmailEntry" IsReadOnly="True" Text="{Binding Email}"></Entry>
 
                 <Label Text="Address:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" Text="{Binding Address}"></Entry>
+                <Entry x:Name="AddressEntry" IsReadOnly="True" Text="{Binding Address}"></Entry>
 
                 <Label Text="City:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" Text="{Binding City}"></Entry>
+                <Entry x:Name="CityEntry" IsReadOnly="True" Text="{Binding City}"></Entry>
 
                 <Label  Text="Country:" TextColor="White"></Label>
+                <Entry x:Name="CountryEntry" IsReadOnly="True" IsVisible="True" Text="{Binding CountryString}"></Entry>
                 <Picker x:Name="CountryPicker" ItemsSource="{Binding CountryList}" SelectedItem="{Binding SelectedCountryModel}" 
-                        ItemDisplayBinding="{Binding Name}" IsEnabled="False"></Picker>
+                        ItemDisplayBinding="{Binding Name}" IsEnabled="False" IsVisible="False"></Picker>
 
                 <Label Text="Username:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" Text="{Binding Username}"></Entry>
+                <Entry x:Name="UsernameEntry" IsReadOnly="True" Text="{Binding Username}"></Entry>
 
                 <Label Text="Password:" TextColor="White"></Label>
-                <Entry IsReadOnly="True" IsPassword="True" Text="{Binding Password}"></Entry>
+                <Entry x:Name="PasswordEntry" IsReadOnly="True" IsPassword="True" Text="{Binding Password}"></Entry>
 
                 <Label Text="Registration date:" TextColor="White"></Label>
-                <DatePicker Date="{Binding RegistrationDate}" IsEnabled="False" BackgroundColor="White"></DatePicker>
+                <DatePicker x:Name="RegistrationDateEntry" Date="{Binding RegistrationDate}" IsEnabled="False" BackgroundColor="White"></DatePicker>
 
-                <Button Text="EDIT PROFILE" BackgroundColor="DodgerBlue" TextColor="White" HorizontalOptions="FillAndExpand" 
-                        Padding="8" Margin="5" CornerRadius="3" Clicked="Button_OnClicked"></Button>
+                <Button x:Name="EditProfileBtn" Text="EDIT PROFILE" BackgroundColor="DodgerBlue" TextColor="White" HorizontalOptions="FillAndExpand" 
+                        Padding="8" Margin="5" CornerRadius="3" Clicked="EditProfileBtn_OnClicked"></Button>
+
+                <Button x:Name="SaveChangesBtn" Text="SAVE CHANGES" BackgroundColor="DodgerBlue" TextColor="White" HorizontalOptions="FillAndExpand" 
+                        Padding="8" Margin="5" CornerRadius="3" Clicked="SaveChangesBtn_OnClicked" IsVisible="False"></Button>
+
+                <Button x:Name="CancelChangesBtn" Text="CANCEL" BackgroundColor="Red" TextColor="White" HorizontalOptions="FillAndExpand" 
+                        Padding="8" Margin="5" CornerRadius="3" Clicked="CancelChangesBtn_OnClicked" IsVisible="False"></Button>
 
             </StackLayout>
         </ScrollView>

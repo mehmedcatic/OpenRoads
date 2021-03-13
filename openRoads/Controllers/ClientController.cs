@@ -18,7 +18,7 @@ namespace openRoadsWebAPI.Controllers
         {
         }
 
-        [Authorize(Roles = HelperClass.adminRole)]
+        [Authorize(Roles = HelperClass.adminRole+ "," + HelperClass.clientRole)]
         public override ClientModel Update(int id, ClientUpdateRequest request)
         {
             return base.Update(id, request);

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using openRoads.Mobile.Converters;
@@ -17,7 +19,8 @@ namespace openRoads.Mobile.Views
     {
         private VehicleOfferViewModel model = null;
 
-        private readonly APIService _service = new APIService("Client");
+        private readonly APIService _clientService = new APIService("Client");
+        private readonly APIService _personService = new APIService("Person");
 
         public VehicleOfferView()
         {
@@ -34,7 +37,7 @@ namespace openRoads.Mobile.Views
             SignOutBtn.CornerRadius = 3;
         }
 
-        public VehicleOfferView(string msg = null)
+        public VehicleOfferView(string msg = null, ReservationModel reservationModel = null)
         {
             InitializeComponent();
             BindingContext = model = new VehicleOfferViewModel();
@@ -51,15 +54,48 @@ namespace openRoads.Mobile.Views
             if (msg != null)
             {
                 DisplayAlert("Success", "Your reservation has been successfully created! Check your e-mail for additional info.", "OK");
+                SendEmail(reservationModel);
             }
         }
 
+        //In order for this to work, you need to enable less secure apps access in your gmail account from which you're using smtp!
+        //In this case we need to enable it for this account: openroads001@gmail.com
+        //In order to do so visit this link: https://myaccount.google.com/lesssecureapps
+        private async void SendEmail(ReservationModel reservationModel)
+        {
+            var client = await _clientService.GetById<ClientModel>(APIService.LoggedUserId);
+            var person = await _personService.GetById<PersonModel>(client.PersonId);
+
+            try
+            {
+
+                MailMessage mail = new MailMessage();
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+
+                mail.From = new MailAddress("openroads001@gmail.com");
+                mail.To.Add(person.Email);
+                mail.Subject = "Reservation confirmation";
+                mail.Body = "Your reservation has been successfully created! If you need additional info please contact our customer service at " +
+                            "openroads001@gmail.com";
+                SmtpServer.Port = 587;
+                SmtpServer.Host = "smtp.gmail.com";
+                SmtpServer.EnableSsl = true;
+                SmtpServer.UseDefaultCredentials = false;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("openroads001@gmail.com", "openROADS1");
+
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
             await model.Init();
-            await Helper.LoadUserImage(_service, userImg);
+            await Helper.LoadUserImage(_clientService, userImg);
         }
 
         private async void Button_OnClicked(object sender, EventArgs e)
