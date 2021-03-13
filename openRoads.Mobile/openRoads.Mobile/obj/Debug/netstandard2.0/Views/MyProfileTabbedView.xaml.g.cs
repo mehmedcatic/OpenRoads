@@ -23,14 +23,14 @@ namespace openRoads.Mobile.Views {
         private global::openRoads.Mobile.Views.MyProfileView MyProfile;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::openRoads.Mobile.Views.MyProfileView MyReservations;
+        private global::openRoads.Mobile.Views.MyReservationsView MyReservations;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MyProfileTabbedView));
             TabbedPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.TabbedPage>(this, "TabbedPage");
             MyProfile = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::openRoads.Mobile.Views.MyProfileView>(this, "MyProfile");
-            MyReservations = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::openRoads.Mobile.Views.MyProfileView>(this, "MyReservations");
+            MyReservations = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::openRoads.Mobile.Views.MyReservationsView>(this, "MyReservations");
         }
     }
 }

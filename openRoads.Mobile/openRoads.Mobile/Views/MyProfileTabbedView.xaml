@@ -13,6 +13,6 @@
 
     
     <views:MyProfileView x:Name="MyProfile" Title="My profile"></views:MyProfileView>
-    <views:MyProfileView x:Name="MyReservations" Title="Main page"></views:MyProfileView>
+    <views:MyReservationsView x:Name="MyReservations" Title="My reservations"></views:MyReservationsView>
     
 </TabbedPage>

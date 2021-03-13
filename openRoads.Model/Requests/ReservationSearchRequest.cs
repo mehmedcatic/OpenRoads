@@ -10,5 +10,6 @@ namespace openRoads.Model.Requests
         public int? InsuranceId { get; set; }
         public int? ReservationYear { get; set; }
         public int? VehicleManufacturerId { get; set; }
+        public int? ClientId { get; set; }
     }
 }

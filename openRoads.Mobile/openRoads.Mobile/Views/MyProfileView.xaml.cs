@@ -22,7 +22,7 @@ namespace openRoads.Mobile.Views
 
         private readonly APIService _clientService = new APIService("Client");
 
-        private IPhotoPickerService service;
+        private IPhotoPickerService _photoPickerService;
 
         public MyProfileView()
         {
@@ -42,7 +42,7 @@ namespace openRoads.Mobile.Views
 
 
             //Register the photo picker service
-            service = DependencyService.Get<IPhotoPickerService>();
+            _photoPickerService = DependencyService.Get<IPhotoPickerService>();
         }
 
         protected override async void OnAppearing()
@@ -144,7 +144,7 @@ namespace openRoads.Mobile.Views
         {
             (sender as Button).IsEnabled = false;
 
-            Stream stream = await service.GetImageStreamAsync();
+            Stream stream = await _photoPickerService.GetImageStreamAsync();
             if (stream != null)
             {
                 UserImage.Source = ImageSource.FromStream(() => stream);

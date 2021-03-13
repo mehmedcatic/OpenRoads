@@ -127,6 +127,20 @@ namespace openRoadsWebAPI.Service
                 return _mapper.Map<List<ReservationModel>>(reservationList);
             }
 
+
+
+            if (search.ClientId.HasValue)
+            {
+                foreach (var x in query)
+                {
+                    if(x.ClientId == search.ClientId)
+                        reservationList.Add(x);
+                }
+
+                return _mapper.Map<List<ReservationModel>>(reservationList);
+            }
+
+
             return _mapper.Map<List<ReservationModel>>(query);
         }
 
