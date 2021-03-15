@@ -31,3 +31,4 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mo
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\MyProfileView.xaml.g.cs
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\MyProfileTabbedView.xaml.g.cs
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\MyReservationsView.xaml.g.cs
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\ReviewView.xaml.g.cs

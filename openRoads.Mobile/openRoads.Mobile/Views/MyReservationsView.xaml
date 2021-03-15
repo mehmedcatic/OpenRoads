@@ -116,8 +116,9 @@
                                         <StackLayout VerticalOptions="Start">
                                             <Image Source="{Binding VehiclePicture, Converter={StaticResource imgConv}}" WidthRequest="250"></Image>
                                             <StackLayout Orientation="Vertical" Padding="7">
-                                                <Button x:Name="ReviewBtn" Text="WRITE A REVIEW" Padding="5" BackgroundColor="Goldenrod" CornerRadius="2" 
-                                                        TextColor="White" Clicked="ReviewBtn_OnClicked" AutomationId="{Binding ReservationId}"></Button>
+                                                <Button x:Name="ReservationButton" Text="WRITE A REVIEW" Padding="5" BackgroundColor="Goldenrod" 
+                                                        CornerRadius="2" 
+                                                        TextColor="White" Clicked="ReservationButton_OnClicked" AutomationId="{Binding ReservationId}"></Button>
                                             </StackLayout>
                                         </StackLayout>
 
@@ -164,6 +165,8 @@
                                             </StackLayout>
 
                                         </StackLayout>
+
+
 
                                     </StackLayout>
 

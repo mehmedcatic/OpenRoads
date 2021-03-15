@@ -14,23 +14,17 @@ namespace openRoadsWebAPI.Service
         public RatingService(MyDbContext context, IMapper mapper) : base(context, mapper)
         {
         }
+
+
+        public override RatingModel GetById(int id)
+        {
+            var rating = _context.Rating.FirstOrDefault(x => x.ReservationId == id);
+
+            if (rating != null)
+                return _mapper.Map<RatingModel>(rating);
+
+            return null;
+        }
         
-
-
-        //public override List<BranchModel> Get(BranchSearchRequest search)
-        //{
-        //    var query = _context.Set<Branch>().AsQueryable();
-
-        //    if (search?.VrstaId.HasValue == true)
-        //    {
-        //        query = query.Where(x => x.VrstaId == search.VrstaId);
-        //    }
-
-        //    query = query.OrderBy(x => x.Naziv);
-
-        //    var list = query.ToList();
-
-        //    return _mapper.Map<List<BranchModel>>(list);
-        //}
     }
 }

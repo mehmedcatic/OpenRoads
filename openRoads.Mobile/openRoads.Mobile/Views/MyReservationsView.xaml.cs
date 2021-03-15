@@ -22,6 +22,7 @@ namespace openRoads.Mobile.Views
         private readonly APIService _vehicleModelService = new APIService("VehicleModel");
         private readonly APIService _vehicleManufacturerService = new APIService("VehicleManufacturer");
 
+        private int? selectedReservationId;
 
         public MyReservationsView()
         {
@@ -45,6 +46,7 @@ namespace openRoads.Mobile.Views
             base.OnAppearing();
             await model.Init();
             await Helper.LoadUserImage(_clientService, userImg);
+            
         }
 
 
@@ -63,9 +65,16 @@ namespace openRoads.Mobile.Views
             Helper.SignOut();
         }
 
-        private void ReviewBtn_OnClicked(object sender, EventArgs e)
+
+        private async void ReservationButton_OnClicked(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Xamarin.Forms.Button btn = sender as Button;
+            if (int.TryParse(btn.AutomationId, out int reservationId))
+                Application.Current.MainPage = new ReviewView(reservationId);
+            else
+            {
+                await DisplayAlert("Error", "Something went wrong... Please try again later!", "OK");
+            }
         }
     }
 }
