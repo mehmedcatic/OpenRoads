@@ -178,7 +178,7 @@ namespace openRoads.Mobile.Views
         {
             try
             {
-                StripeConfiguration.SetApiKey(StripeTestApiKey);
+                StripeConfiguration.ApiKey = StripeTestApiKey;
                 var service = new ChargeService();
                 var Tokenoptions = new TokenCreateOptions
                 {
@@ -207,7 +207,7 @@ namespace openRoads.Mobile.Views
         {
             try
             {
-                StripeConfiguration.SetApiKey("sk_test_51IVMgHL2mA4sjL4DlGKctDWkZBf5I9TEsrxZcjF7R3OxFEkPEhA6HwjFUhbEU6C8MXkDrsccbuR4TnIJSoxuarqe00PvgDmaQp");
+                StripeConfiguration.ApiKey = "sk_test_51IVMgHL2mA4sjL4DlGKctDWkZBf5I9TEsrxZcjF7R3OxFEkPEhA6HwjFUhbEU6C8MXkDrsccbuR4TnIJSoxuarqe00PvgDmaQp";
                 var options = new ChargeCreateOptions
                 {
                     Amount = (long)float.Parse("20000"),

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3s1Z81UKXtmucMihp5IrwSmPVWWa1lkKecyqsrhuheJw2OuY89R0Se+8HyKKLMa8ETiNgWGe52c2a/yQ9SxisQ==",
+  "dgSpecHash": "QDBILyhdN2epV0ZNLxMJSho/wX18/ukHz6TqBIfAOR2ERZdNrk65WAHXI9danIJ1nCBVAgbQu4MIjA9+OhS6xw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Mobile\\openRoads.Mobile.Android\\openRoads.Mobile.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehmed\\.nuget\\packages\\flurl\\3.0.1\\flurl.3.0.1.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\flurl.http\\3.0.1\\flurl.http.3.0.1.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Mehmed\\.nuget\\packages\\rg.plugins.popup\\2.0.0.10\\rg.plugins.popup.2.0.0.10.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\stripe.net\\28.1.0\\stripe.net.28.1.0.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
@@ -53,7 +54,7 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
+    "C:\\Users\\Mehmed\\.nuget\\packages\\xamarin.forms\\4.5.0.657\\xamarin.forms.4.5.0.657.nupkg.sha512"
   ],
   "logs": []
 }

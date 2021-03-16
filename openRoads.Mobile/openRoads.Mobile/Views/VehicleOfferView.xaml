@@ -16,11 +16,12 @@
             <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <!--<ContentPage.Content>-->
 
     <StackLayout>
 
         <StackLayout Padding="10" HeightRequest="60" Orientation="Horizontal" BackgroundColor="DodgerBlue">
+            <Button x:Name="NeedHelpBtn" Text="Need help?" TextColor="White" BackgroundColor="DodgerBlue" Margin="5" Padding="8" CornerRadius="3"
+                    HorizontalOptions="Start" VerticalOptions="Center" Clicked="NeedHelpBtn_OnClicked"></Button>
             <ImageButton x:Name="userImg" HorizontalOptions="EndAndExpand" VerticalOptions="Center" Clicked="UserImg_OnClicked"></ImageButton>
             <Button x:Name="SignOutBtn" HorizontalOptions="End" VerticalOptions="Center" Text="Sign out" BackgroundColor="White" 
                     TextColor="CornflowerBlue" Clicked="SignOutBtn_OnClicked" CornerRadius="3"></Button>

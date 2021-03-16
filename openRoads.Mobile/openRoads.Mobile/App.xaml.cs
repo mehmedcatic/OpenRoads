@@ -3,6 +3,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using openRoads.Mobile.Services;
 using openRoads.Mobile.Views;
+using Rg.Plugins;
+using Rg.Plugins.Popup;
+using Rg;
 
 namespace openRoads.Mobile
 {
@@ -14,10 +17,13 @@ namespace openRoads.Mobile
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
-            //MainPage = new MainPage();
-            //MainPage = new LoginPage();
             MainPage = new LandingPageView();
+
+           
+
         }
+
+
 
         protected override void OnStart()
         {

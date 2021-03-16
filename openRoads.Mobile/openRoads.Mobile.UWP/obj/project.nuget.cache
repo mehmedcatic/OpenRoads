@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DqgFsBquhDyb4u5zI20JopXh/kw3NOjm8p4aeIVTEc7pLjVHTFqF27wEc6ggVvILOuE+nfNgIYIH/9eC9lP60A==",
+  "dgSpecHash": "HGA/fBApnMxLzQSr7V5FQTeytMCfZITxYgMVB30gaRi5F0UY7YLRya2Z3SvI/JI3Nmy0aoZR7rF1oCfcwRdUAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Mobile\\openRoads.Mobile.UWP\\openRoads.Mobile.UWP.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\Mehmed\\.nuget\\packages\\microsoft.ui.xaml\\2.3.191211002\\microsoft.ui.xaml.2.3.191211002.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Mehmed\\.nuget\\packages\\rg.plugins.popup\\2.0.0.10\\rg.plugins.popup.2.0.0.10.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.1.9\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.1.9.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\runtime.win10-arm.microsoft.net.native.compiler\\2.1.8\\runtime.win10-arm.microsoft.net.native.compiler.2.1.8.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\runtime.win10-arm.microsoft.net.native.sharedlibrary\\2.1.8\\runtime.win10-arm.microsoft.net.native.sharedlibrary.2.1.8.nupkg.sha512",
@@ -38,7 +39,7 @@
     "C:\\Users\\Mehmed\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\win2d.uwp\\1.20.0\\win2d.uwp.1.20.0.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"
+    "C:\\Users\\Mehmed\\.nuget\\packages\\xamarin.forms\\4.5.0.657\\xamarin.forms.4.5.0.657.nupkg.sha512"
   ],
   "logs": []
 }

@@ -9,8 +9,10 @@ using openRoads.Mobile.Converters;
 using openRoads.Mobile.Helpers;
 using openRoads.Mobile.ViewModels;
 using openRoads.Model;
+using Rg.Plugins.Popup.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace openRoads.Mobile.Views
 {
@@ -35,6 +37,8 @@ namespace openRoads.Mobile.Views
 
             SignOutBtn.Padding = new Thickness(3);
             SignOutBtn.CornerRadius = 3;
+
+
         }
 
         public VehicleOfferView(string msg = null, ReservationModel reservationModel = null)
@@ -126,6 +130,10 @@ namespace openRoads.Mobile.Views
             Helper.SignOut();
         }
 
+        private void NeedHelpBtn_OnClicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NeedHelpView();
+        }
 
         private bool IsReservationLongerThan28Days()
         {
@@ -216,5 +224,6 @@ namespace openRoads.Mobile.Views
             else
                 model.SelectedDateTo = EndDate.Date;
         }
+
     }
 }

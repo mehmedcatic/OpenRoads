@@ -32,3 +32,4 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mo
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\ReviewView.xaml.g.cs
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\openRoads.Mobile.csproj.CoreCompileInputs.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\NeedHelpView.xaml.g.cs
