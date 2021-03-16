@@ -125,7 +125,34 @@ namespace openRoads.Mobile.ViewModels
             }
         }
 
-        
+
+        string _creditCardNumber;
+        public string CreditCardNumber
+        {
+            get { return _creditCardNumber; }
+            set { SetProperty(ref _creditCardNumber, value); }
+        }
+
+        string _expiryYear;
+        public string ExpiryYear
+        {
+            get { return _expiryYear; }
+            set { SetProperty(ref _expiryYear, value); }
+        }
+
+        string _expiryMonth;
+        public string ExpiryMonth
+        {
+            get { return _expiryMonth; }
+            set { SetProperty(ref _expiryMonth, value); }
+        }
+
+        string _cvc;
+        public string CVC
+        {
+            get { return _cvc; }
+            set { SetProperty(ref _cvc, value); }
+        }
 
         public ICommand InitCommand { get; set; }
 

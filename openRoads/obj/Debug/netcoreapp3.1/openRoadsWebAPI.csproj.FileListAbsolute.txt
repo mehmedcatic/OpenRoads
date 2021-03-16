@@ -81,9 +81,6 @@ C:\Users\Mehmed\source\repos\openRoads\openRoads\bin\Debug\netcoreapp3.1\System.
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.csprojAssemblyReference.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.AssemblyInfoInputs.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.AssemblyInfo.cs
-C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.csproj.CoreCompileInputs.cache
-C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.dll
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.pdb
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\bin\Debug\netcoreapp3.1\appsettings.Development.json
@@ -150,3 +147,7 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreap
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\staticwebassets\openRoadsWebAPI.StaticWebAssets.Manifest.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\staticwebassets\openRoadsWebAPI.StaticWebAssets.xml
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.genruntimeconfig.cache
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\bin\Debug\netcoreapp3.1\Stripe.net.dll
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.csproj.CoreCompileInputs.cache
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads\obj\Debug\netcoreapp3.1\openRoadsWebAPI.MvcApplicationPartsAssemblyInfo.cache

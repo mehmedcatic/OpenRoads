@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using openRoads.Mobile.Converters;
 using openRoads.Mobile.Helpers;
 using openRoads.Mobile.ViewModels;
 using openRoads.Model;
+using Stripe;
+using Stripe.Issuing;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -110,23 +113,169 @@ namespace openRoads.Mobile.Views
             bool valid = true;
             if (model.SelectedInsuranceType == null)
             {
-                await DisplayAlert("Warning", "Please select insurance type.", "OK");
+                await DisplayAlert("Warning", "Please select insurance type!", "OK");
                 valid = false;
             }
             if (valid && !inPersonCB.IsChecked && !creditCardCB.IsChecked)
             {
-                await DisplayAlert("Warning", "Please select payment option.", "OK");
+                await DisplayAlert("Warning", "Please select payment option!", "OK");
                 valid = false;
             }
 
             if (valid && inPersonCB.IsChecked && creditCardCB.IsChecked)
             {
-                await DisplayAlert("Warning", "Please select only one payment option.", "OK");
+                await DisplayAlert("Warning", "Please select only one payment option!", "OK");
                 valid = false;
             }
 
-            if(valid)
+            if (valid && creditCardCB.IsChecked)
+            {
+                if (string.IsNullOrWhiteSpace(ExpiryMonthEntry.Text) ||
+                    string.IsNullOrWhiteSpace(ExpiryYearEntry.Text) || string.IsNullOrWhiteSpace(CVCEntry.Text)
+                    || string.IsNullOrWhiteSpace(CCNumberEntry.Text))
+                {
+                    await DisplayAlert("Warning", "Please input all credit card information!", "OK");
+                    valid = false;
+                }
+
+                if (valid && !validateCreditCardInfo())
+                {
+                    await DisplayAlert("Warning", "Please input valid credit card data!", "OK");
+                    valid = false;
+                }
+            }
+
+            if (valid)
+            {
                 model.CreateReservationCommand.Execute(null);
+
+                if (!inPersonCB.IsChecked)
+                {
+                    CancellationTokenSource tokenSource = new CancellationTokenSource();
+                    CancellationToken token = tokenSource.Token;
+
+                    var Token = CreateToken();
+
+                    if (Token != null)
+                    {
+                        MakePayment(Token);
+                    }
+                    else
+                    {
+                        await DisplayAlert("Warning", "Something went wrong... Please try again later!", "OK");
+                    }
+                }
+
+               
+            }
         }
+
+        private TokenService Tokenservice;
+        private Token stripeToken;
+        private string StripeTestApiKey = "pk_test_51IVMgHL2mA4sjL4DRy2L5lHRBoT8DUxuIDq0gtLYYPADSgS4bxwYKEsNWtEWL5W2aBj3PRP7VZ2AFzCHiDwlZ4Us002omrXQ4c";
+
+        private string CreateToken()
+        {
+            try
+            {
+                StripeConfiguration.SetApiKey(StripeTestApiKey);
+                var service = new ChargeService();
+                var Tokenoptions = new TokenCreateOptions
+                {
+                    Card = new CreditCardOptions
+                    {
+                        Number = CCNumberEntry.Text,
+                        ExpYear = long.Parse(ExpiryYearEntry.Text),
+                        ExpMonth = long.Parse(ExpiryMonthEntry.Text),
+                        Cvc = CVCEntry.Text
+                    }
+                };
+
+                Tokenservice = new TokenService();
+                stripeToken = Tokenservice.Create(Tokenoptions);
+                return stripeToken.Id;
+            }
+            catch (Exception ex)
+            { 
+                DisplayAlert("Warning", "Something went wrong... Please try again later!", "OK");
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public bool MakePayment(string token)
+        {
+            try
+            {
+                StripeConfiguration.SetApiKey("sk_test_51IVMgHL2mA4sjL4DlGKctDWkZBf5I9TEsrxZcjF7R3OxFEkPEhA6HwjFUhbEU6C8MXkDrsccbuR4TnIJSoxuarqe00PvgDmaQp");
+                var options = new ChargeCreateOptions
+                {
+                    Amount = (long)float.Parse("20000"),
+                    Currency = "usd",
+                    Description = "Charge for Jon.rosen@example.com",
+                    Source = stripeToken.Id,
+                    StatementDescriptor = "Custom descriptor",
+                    Capture = true,
+                    ReceiptEmail = "mcatic1402@gmail.com",
+                };
+                //Make Payment
+                var service = new ChargeService();
+                Charge charge = service.Create(options);
+                return true;
+            }
+            catch (Exception ex)
+            { 
+                DisplayAlert("Warning", "Something went wrong... Please try again later!", "OK");
+                Console.Write("Payment Gatway (CreateCharge)" + ex.Message);
+                throw ex;
+            }
+        }
+        private bool validateCreditCardInfo()
+        {
+            try
+            {
+                if (ExpiryMonthEntry.Text.Length != 2) return false;
+                if (ExpiryYearEntry.Text.Length != 2) return false;
+                if (CVCEntry.Text.Length > 4 || CVCEntry.Text.Length < 3) return false;
+                if (CCNumberEntry.Text.Length < 12 || CCNumberEntry.Text.Length > 16) return false;
+
+
+                if (!int.TryParse(ExpiryYearEntry.Text, out int yearInt)) return false;
+                if(!int.TryParse(ExpiryMonthEntry.Text, out int monthInt)) return false;
+                if(!int.TryParse(CVCEntry.Text, out int cvvInt)) return false;
+                //if (!int.TryParse(CCNumberEntry.Text, out int ccInt)) return false;
+
+                yearInt += 2000;
+
+                if (yearInt < DateTime.Now.Year)
+                    return false;
+                if (yearInt > DateTime.Now.AddYears(16).Year)
+                    return false;
+                if (yearInt == DateTime.Now.Year && monthInt < DateTime.Now.Month)
+                    return false;
+                if (monthInt < 1 || monthInt > 12)
+                    return false;
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+        private void CreditCardCB_OnCheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (creditCardCB.IsChecked == true)
+            {
+                stackLayoutForCC.IsVisible = true;
+            }
+            else
+            {
+                stackLayoutForCC.IsVisible = false;
+            }
+        }
+
+
     }
 }

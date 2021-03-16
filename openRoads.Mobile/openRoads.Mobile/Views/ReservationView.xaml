@@ -90,10 +90,27 @@
 
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Credit Card" HorizontalOptions="Start"></Label>
-                        <CheckBox x:Name="creditCardCB" IsChecked="False" HorizontalOptions="EndAndExpand"></CheckBox>
+                        <CheckBox x:Name="creditCardCB" IsChecked="False" CheckedChanged="CreditCardCB_OnCheckedChanged" HorizontalOptions="EndAndExpand"></CheckBox>
                     </StackLayout>
 
+                    <StackLayout x:Name="stackLayoutForCC" IsVisible="False" Padding="15" Margin="10">
+
+                        <StackLayout>
+                            <Entry x:Name="CCNumberEntry" Text="{Binding CreditCardNumber}" Keyboard="Numeric" Placeholder="Enter your credit card number"
+                                   ></Entry>
+                            <StackLayout Orientation="Horizontal">
+                                <Entry x:Name="ExpiryYearEntry" Text="{Binding ExpiryYear}" Keyboard="Numeric" 
+                                       Placeholder="Year" MaxLength="2"></Entry>
+                                <Entry x:Name="ExpiryMonthEntry" Text="{Binding ExpiryMonth}" Keyboard="Numeric" Placeholder="Month" 
+                                       MaxLength="2"></Entry>
+                                <Entry x:Name="CVCEntry" Text="{Binding CVC}" Keyboard="Numeric" Placeholder="CVC" 
+                                       MaxLength="4"></Entry>
+                            </StackLayout>
+                        </StackLayout>
+
+                    </StackLayout>
                 </StackLayout>
+
 
                 <Button Text="SUBMIT RESERVATION" BackgroundColor="DodgerBlue" TextColor="White" HorizontalOptions="FillAndExpand" 
                         Padding="8" Margin="5" CornerRadius="3" Clicked="Button_OnClicked"></Button>

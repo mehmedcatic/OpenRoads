@@ -13,6 +13,6 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\bin\Debug\net
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\obj\Debug\netstandard2.0\openRoads.Model.csprojAssemblyReference.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\obj\Debug\netstandard2.0\openRoads.Model.AssemblyInfoInputs.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\obj\Debug\netstandard2.0\openRoads.Model.AssemblyInfo.cs
-C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\obj\Debug\netstandard2.0\openRoads.Model.csproj.CoreCompileInputs.cache
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\obj\Debug\netstandard2.0\openRoads.Model.dll
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\obj\Debug\netstandard2.0\openRoads.Model.pdb
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Model\obj\Debug\netstandard2.0\openRoads.Model.csproj.CoreCompileInputs.cache

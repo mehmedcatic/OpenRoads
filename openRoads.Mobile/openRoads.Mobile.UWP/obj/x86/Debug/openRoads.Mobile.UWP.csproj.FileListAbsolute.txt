@@ -319,3 +319,13 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mo
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160679180000000.json
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885274160000000.json
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\Stripe.net.dll
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\Stripe.net.pdb
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\System.Memory.dll
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\bin\x86\Debug\System.Security.Permissions.dll
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\obj\x86\Debug\FxResources.System.Configuration.ConfigurationManager.SR.resw
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\obj\x86\Debug\FxResources.System.Memory.SR.resw
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Cryptography.ProtectedData.SR.resw
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile.UWP\obj\x86\Debug\FxResources.System.Security.Permissions.SR.resw

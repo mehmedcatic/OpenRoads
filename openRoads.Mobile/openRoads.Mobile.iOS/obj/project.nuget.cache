@@ -1,14 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "gv2ANHqfsjMV6o1IRYPuzUj//09mtct3HW8kcmCtmtoZ/UcYYvbW7EnrIAIUMrttdKt9jlwHql+I9O6IvYOnxA==",
+  "dgSpecHash": "ZS0TwkvV1YUA3OeXJHJBoX02sdj1nt34YIavNSzWhq938IVfhnsV33AwSyEIivKaPipNqidA1rb0vOGNdca7YQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mehmed\\Desktop\\GitHub\\OpenRoads\\OpenRoads\\openRoads.Mobile\\openRoads.Mobile.iOS\\openRoads.Mobile.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mehmed\\.nuget\\packages\\flurl\\3.0.1\\flurl.3.0.1.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\flurl.http\\3.0.1\\flurl.http.3.0.1.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\Mehmed\\.nuget\\packages\\stripe.net\\28.1.0\\stripe.net.28.1.0.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mehmed\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\Mehmed\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\Mehmed\\.nuget\\packages\\system.security.permissions\\4.5.0\\system.security.permissions.4.5.0.nupkg.sha512",
+    "C:\\Users\\Mehmed\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
     "C:\\Users\\Mehmed\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.5.0.495\\xamarin.forms.4.5.0.495.nupkg.sha512"

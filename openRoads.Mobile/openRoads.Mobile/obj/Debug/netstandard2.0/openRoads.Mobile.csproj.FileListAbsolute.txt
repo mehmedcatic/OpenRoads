@@ -15,8 +15,6 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mo
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\bin\Debug\netstandard2.0\openRoads.Mobile.pdb
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\bin\Debug\netstandard2.0\openRoads.Model.dll
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\bin\Debug\netstandard2.0\openRoads.Model.pdb
-C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\openRoads.Mobile.csproj.CoreCompileInputs.cache
-C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\openRoads.Mobile.csproj.CopyComplete
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\openRoads.Mobile.dll
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\ref\openRoads.Mobile.dll
@@ -32,3 +30,5 @@ C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mo
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\MyProfileTabbedView.xaml.g.cs
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\MyReservationsView.xaml.g.cs
 C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\Views\ReviewView.xaml.g.cs
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\openRoads.Mobile.csproj.CoreCompileInputs.cache
+C:\Users\Mehmed\Desktop\GitHub\OpenRoads\OpenRoads\openRoads.Mobile\openRoads.Mobile\obj\Debug\netstandard2.0\XamlC.stamp

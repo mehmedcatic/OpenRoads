@@ -47,6 +47,10 @@
               "target": "Package",
               "version": "[6.1.9, )"
             },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[28.1.0, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.6.1, )"
@@ -138,6 +142,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[28.1.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
